@@ -1,0 +1,122 @@
+.contact-cards-container {
+  min-height: 413px;
+  margin-top: 4rem;
+
+  @include breakpoint(small only) {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.contact-card {
+  //width: 324px;
+  display: none;
+  height: 365px;
+  max-width: 370px;
+  margin-bottom: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+  //margin: 50px auto;
+  border-radius: 30px;
+  background-color: #f6fcfe;
+  box-shadow: 0px 20px 70px 0px rgba(0, 0, 0, 0.21);
+  position: relative;
+  overflow: hidden;
+
+  .contact-top {
+    position: absolute;
+    width: 100%;
+    height: 70%;
+    //background-image: url('https://0.s3.envato.com/files/183626516/Image/Image_Profile.jpg');
+    background-position: 50%;
+    background-size: cover;
+    z-index: 3;
+    text-align: center;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    transition: .5s ease-in-out;
+
+    @include breakpoint(small up) {
+      height: 70%;
+    }
+
+    span {
+      display:block;
+      color: white;
+      width: 100%;
+
+      &:first-of-type {
+        position: absolute;
+        bottom: 29px;
+        font-size: 28px;
+      }
+
+      &:last-of-type {
+        position: absolute;
+        bottom: 10px;
+        margin-top: 0;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .contact-down {
+    background-color: #fff;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 30%;
+    z-index: 2;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    transition: .5s ease-in-out;
+    padding-top: 1.5rem;
+
+    @include breakpoint(small up) {
+      height: 30%;
+    }
+
+    @include breakpoint(small up) {
+      div.columns:first-of-type {
+        //padding-left: 4rem;
+      }
+
+      div.columns:last-of-type {
+        //padding-right: 4rem;
+      }
+    }
+
+    a span:hover {
+      text-decoration: underline;
+    }
+
+    span {
+      //display:block;
+
+      color: #334750;
+      font-weight: 700;
+      margin-top: 0;
+
+      i.fa {
+        margin-top: 19px;
+        color: #453875;
+        margin-right: 5px;
+      }
+
+      //&:first-of-type {
+      //  color: #68818c;
+      //  margin-bottom: 5px;
+      //  margin-top: 21px;
+      //  font-size: 42px;
+      //}
+      //
+      //&:last-of-type {
+      //  color: #334750;
+      //  font-weight: 700;
+      //  margin-top: 0;
+      //}
+    }
+  }
+}

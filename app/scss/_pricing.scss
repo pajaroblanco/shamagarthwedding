@@ -1,0 +1,9 @@
+.pricing-wrapper {
+  opacity: 0;
+
+  .pricing-table {
+    @include breakpoint(small only) {
+      margin-bottom: 3.5rem;
+    }
+  }
+}

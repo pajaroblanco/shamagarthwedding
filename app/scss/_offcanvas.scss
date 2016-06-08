@@ -1,0 +1,25 @@
+.off-canvas-wrapper {
+  min-height: 100%;
+  overflow-y: hidden;
+}
+
+.off-canvas {
+  height: 100vh;
+  max-height: 100vh;
+  border-left: solid 1px #8F8F8F;
+  background-color: white;
+
+  ul.menu {
+    & > li {
+      i {
+        position: relative;
+        top: 1px;
+        //margin-right: 1rem;
+      }
+      span {
+        position: absolute;
+        left: 2.75rem;
+      }
+    }
+  }
+}

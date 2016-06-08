@@ -1,0 +1,98 @@
+header {
+  padding-top: .5rem;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+
+  @include breakpoint(small only) {
+    //height: auto;
+    display: none;
+  }
+
+  .row:first-of-type {
+    @include breakpoint(large up) {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+
+  a.logo {
+    i {
+      background: url('http://cinescape.us/wp-content/uploads/2016/05/Logo6.png') no-repeat center center;
+      //background-size: cover;
+      height: 70px;
+      max-width: 90vw;
+      display: inline-block;
+      background-size: 100%;
+      width: 200px;
+      //background-repeat: no-repeat;
+    }
+  }
+
+  ul.menu {
+    //border-top: solid 1px white;
+
+    li {
+      a {
+        line-height: .5;
+        color: #2A2A2A;
+        margin-bottom: .75rem;
+        margin-top: .75rem;
+        position: relative;
+
+        font-size: 13px;
+        //font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+
+        &:not(.active):after {
+          content: "";
+          transition: -webkit-transform .25s ease;
+          transition: transform .25s ease;
+          position: absolute;
+          left: 0;
+          bottom: -1px;
+          height: 2px;
+          background: $primary-color;
+          display: block;
+          width: 100%;
+          -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+        }
+
+        &:hover {
+          &:after {
+            transform: scaleX(.85);
+          }
+        }
+
+        &.active {
+          //border-bottom: solid 2px $active-navigation-link-color;
+
+          &:after {
+            content: "";
+            transition: -webkit-transform .25s ease;
+            transition: transform .25s ease;
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            height: 2px;
+            background: orange;
+            display: block;
+            width: 100%;
+            -webkit-transform: scaleX(0);
+            transform: scaleX(.85);
+          }
+        }
+      }
+    }
+
+    &.light {
+      li {
+        a {
+          color:white;
+        }
+      }
+    }
+  }
+}

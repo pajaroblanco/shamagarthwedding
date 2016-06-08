@@ -1,0 +1,30 @@
+form.app-form {
+
+  //small.form-error, span.form-error {
+  //  display: none;
+  //}
+  //
+  //.error small.form-error, .error span.form-error {
+  //  display: block;
+  //}
+  //
+  //.error label small {
+  //  font-size: 70%;
+  //}
+
+  span.form-error {
+    margin-top: -0.9rem;
+  }
+
+  label {
+    small {
+      margin-left: 5px;
+      font-style: italic;
+    }
+  }
+
+  textarea {
+    min-height: 175px;
+  }
+
+}

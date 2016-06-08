@@ -1,0 +1,81 @@
+.home-hero {
+  background: url('../dist/images/home.jpg') no-repeat center center;
+  @include hero(100vh);
+
+  .hero-overlay {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.55);
+    width: 100%;
+    height: inherit;
+    top: 0;
+
+    @include breakpoint(small only) {
+      top: $topbar-height;
+    }
+  }
+
+  .hero-text {
+    position: relative;
+
+    //@include breakpoint(small only) {
+    //  top: -5rem;
+    //}
+
+    h1, h2, h3, h4, h5, p {
+      color: white;
+      position: relative;
+    }
+
+    p {
+      & > em {
+        font-size: 200%;
+      }
+    }
+
+    h1 {
+      font-size: 250%;
+      margin-top:2rem;
+      margin-bottom: 2rem;
+
+      @include breakpoint(small only) {
+        font-size: 150%
+      }
+    }
+
+    .button {
+      margin-top: 1rem;
+      position: relative;
+      border-radius: 30px;
+      padding-right: 2rem;
+      padding-left: 2rem;
+      outline: none;
+    }
+  }
+}
+
+.home-content {
+  margin-top: 5rem;
+
+  & > div.row.full-width {
+    &:nth-of-type(odd) {
+      background-color: $gray-bg-color;
+    }
+
+    div.row.standard-width {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+
+      p {
+        font-size: 110%;
+
+        @include breakpoint(small only) {
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+
+  h3 {
+    //margin-top: 3rem;
+  }
+}

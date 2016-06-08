@@ -1,0 +1,84 @@
+.about-hero {
+  background: url('http://cinescape.us/wp-content/uploads/2016/04/drone_blurred_small.jpg') no-repeat center center;
+  @include hero(625px);
+
+  &:before {
+    background-color: rgba(48, 53, 52, 0.38);
+    height: inherit;
+    width: inherit;
+    content: "";
+    position: absolute;
+    top: 0;
+
+    @include breakpoint(small only) {
+      top: $topbar-height;
+    }
+  }
+
+  //&:before {
+  //  @include breakpoint(small only) {
+  //    top: $topbar-height;
+  //  }
+  //}
+
+  .hero-text {
+    padding-right: 2rem;
+
+    h1, h2, h3, h4, h5, p {
+      color: white;
+      opacity: 0;
+    }
+  }
+}
+
+.philosophy {
+  min-height: 535px;
+
+  h1, p {
+    opacity: 0;
+  }
+
+  div.columns:first-of-type {
+    //padding-left: 5rem;
+    //padding-right: 5rem;
+
+    @include breakpoint(small only) {
+      padding: 5rem;
+    }
+    @include breakpoint(large up) {
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
+  }
+
+  .philosophy-hero {
+    min-height: inherit;
+    background: url('http://themes.themegoods2.com/photome/demo/wp-content/uploads/2013/07/slide-01-big.jpg') no-repeat center center;
+  }
+}
+
+.happy-customers {
+  .amount {
+    font-size: 60px;
+  }
+}
+
+.our-team {
+  background-color: $gray-bg-color;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+
+  .row {
+    margin-bottom: 2rem;
+  }
+}
+
+.latest-work {
+  //background-color: #f9f9f9;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+
+  .row {
+    margin-bottom: 2rem;
+  }
+}

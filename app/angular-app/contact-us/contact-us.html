@@ -1,0 +1,59 @@
+<div class="row content contact-us">
+    <div class="small-12 columns">
+
+        <h1>Contact Us<span>818-732-0006</span></h1>
+        <hr>
+
+        <form novalidate app-form name="vm.contactForm" ng-submit="vm.onSubmit(vm.contactForm)">
+            <div class="row">
+                <div class="small-12 medium-4 columns">
+                    <label>
+                        Name <small>Required</small>
+                        <input type="text" required ng-model="vm.contact.name"/>
+                        <span class="form-error">Name is required</span>
+                    </label>
+                </div>
+                <div class="small-12 medium-4 columns">
+                    <label>
+                        Email <small>Required</small>
+                        <input type="email" required ng-model="vm.contact.email"/>
+                        <span class="form-error">Please provide a valid email address</span>
+                    </label>
+                </div>
+                <div class="small-12 medium-4 columns">
+                    <label>
+                        Phone
+                        <input type="text" ng-pattern="/^\(?(\d{3})\)?[ .-]?(\d{3})[ .-]?(\d{4})[ .-]?(x[0-9]+)?$/" ng-model="vm.contact.phone"/>
+                        <span class="form-error">This is not a valid phone number</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="small-12 medium-12 columns">
+                    <label>
+                        Subject <small>Required</small>
+                        <input type="text" required ng-model="vm.contact.subject"/>
+                        <span class="form-error">Subject is required</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="small-12 medium-12 columns">
+                    <label>
+                        Message <small>Required</small>
+                        <textarea required ng-model="vm.contact.message"></textarea>
+                        <span class="form-error">Message is required</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="small-12 columns text-right">
+                    <button type="submit" class="button large" ng-disabled="vm.isSubmitting">Submit<span ng-show="vm.isSubmitting">ing...</span></button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

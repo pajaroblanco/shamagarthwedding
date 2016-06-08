@@ -1,0 +1,21 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,300);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,400italic);
+@import "settings";
+@import "../bower_components/font-awesome/scss/font-awesome";
+@import "../bower_components/foundation-sites/scss/foundation";
+@import "../bower_components/sweetalert/dev/sweetalert";
+
+@include foundation-everything(true);
+
+@import "offcanvas";
+@import "header";
+@import "footer";
+@import "body";
+@import "contact-card";
+@import "form";
+@import "pricing-table";
+
+@import "about-us";
+@import "home";
+@import "contact-us";
+@import "pricing";
