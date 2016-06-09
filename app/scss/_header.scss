@@ -16,17 +16,22 @@ header {
     }
   }
 
-  a.logo {
-    i {
-      background: url('http://cinescape.us/wp-content/uploads/2016/05/Logo6.png') no-repeat center center;
-      //background-size: cover;
-      height: 70px;
-      max-width: 90vw;
-      display: inline-block;
-      background-size: 100%;
-      width: 200px;
-      //background-repeat: no-repeat;
-    }
+  h2 {
+    font-family: $body-font-family;
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: none;
+    margin-top: 24px;
+  }
+
+  h1 {
+    //font-family: $body-font-family;
+    color: white;
+    font-size: 88px;
+    font-weight: 600;
+    text-transform: none;
+    margin-top: 85px;
   }
 
   ul.menu {
@@ -34,65 +39,68 @@ header {
 
     li {
       a {
+        transition: color .1s 0s ease-in-out;
         line-height: .5;
-        color: #2A2A2A;
+        color: rgba(255,255,255,.6);
         margin-bottom: .75rem;
         margin-top: .75rem;
         position: relative;
 
-        font-size: 13px;
-        //font-weight: 600;
+        font-size: 12px;
+        font-weight: 500;
         letter-spacing: 2px;
         text-transform: uppercase;
 
-        &:not(.active):after {
-          content: "";
-          transition: -webkit-transform .25s ease;
-          transition: transform .25s ease;
-          position: absolute;
-          left: 0;
-          bottom: -1px;
-          height: 2px;
-          background: $primary-color;
-          display: block;
-          width: 100%;
-          -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-        }
+        //&:not(.active):after {
+        //  content: "";
+        //  transition: -webkit-transform .25s ease;
+        //  transition: transform .25s ease;
+        //  position: absolute;
+        //  left: 0;
+        //  bottom: -1px;
+        //  height: 2px;
+        //  background: $primary-color;
+        //  display: block;
+        //  width: 100%;
+        //  -webkit-transform: scaleX(0);
+        //  transform: scaleX(0);
+        //}
 
         &:hover {
-          &:after {
-            transform: scaleX(.85);
-          }
+          //&:after {
+          //  transform: scaleX(.85);
+          //}
+          color: rgba(255,255,255,1);
         }
 
         &.active {
+          color: rgba(255,255,255,1);
           //border-bottom: solid 2px $active-navigation-link-color;
 
-          &:after {
-            content: "";
-            transition: -webkit-transform .25s ease;
-            transition: transform .25s ease;
-            position: absolute;
-            left: 0;
-            bottom: -1px;
-            height: 2px;
-            background: orange;
-            display: block;
-            width: 100%;
-            -webkit-transform: scaleX(0);
-            transform: scaleX(.85);
-          }
+          //&:after {
+          //  content: "";
+          //  transition: -webkit-transform .25s ease;
+          //  transition: transform .25s ease;
+          //  position: absolute;
+          //  left: 0;
+          //  bottom: -1px;
+          //  height: 2px;
+          //  background: orange;
+          //  display: block;
+          //  width: 100%;
+          //  -webkit-transform: scaleX(0);
+          //  transform: scaleX(.85);
+          //}
         }
       }
     }
 
-    &.light {
-      li {
-        a {
-          color:white;
-        }
-      }
-    }
+    //&.light {
+    //  li {
+    //    a {
+    //      color:white;
+    //    }
+    //  }
+    //}
   }
 }

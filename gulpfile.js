@@ -9,42 +9,46 @@ var distPath = 'app/dist';
 
 var sassPaths = [
     'app/bower_components/foundation-sites/scss',
-    'app/bower_components/motion-ui/src'
+    'app/bower_components/motion-ui/src',
+    'app/bower_components/angular-carousel/src/css'
     //'app/scss/**/*.scss'
 ];
 
 var externalJsPaths = [
     "app/bower_components/jquery/dist/jquery.js",
     "app/bower_components/lodash/dist/lodash.js",
+    "app/bower_components/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js",
 
-    "app/bower_components/foundation-sites/js/foundation.core.js",
-    "app/bower_components/foundation-sites/js/foundation.abide.js",
-    "app/bower_components/foundation-sites/js/foundation.accordion.js",
-    "app/bower_components/foundation-sites/js/foundation.accordionMenu.js",
-    "app/bower_components/foundation-sites/js/foundation.drilldown.js",
-    "app/bower_components/foundation-sites/js/foundation.dropdown.js",
-    "app/bower_components/foundation-sites/js/foundation.dropdownMenu.js",
-    "app/bower_components/foundation-sites/js/foundation.equalizer.js",
-    "app/bower_components/foundation-sites/js/foundation.interchange.js",
-    "app/bower_components/foundation-sites/js/foundation.magellan.js",
-    "app/bower_components/foundation-sites/js/foundation.offcanvas.js",
-    "app/bower_components/foundation-sites/js/foundation.orbit.js",
-    "app/bower_components/foundation-sites/js/foundation.responsiveMenu.js",
-    "app/bower_components/foundation-sites/js/foundation.responsiveToggle.js",
-    "app/bower_components/foundation-sites/js/foundation.reveal.js",
-    "app/bower_components/foundation-sites/js/foundation.slider.js",
-    "app/bower_components/foundation-sites/js/foundation.sticky.js",
-    "app/bower_components/foundation-sites/js/foundation.tabs.js",
-    "app/bower_components/foundation-sites/js/foundation.toggler.js",
-    "app/bower_components/foundation-sites/js/foundation.tooltip.js",
-    "app/bower_components/foundation-sites/js/foundation.util.box.js",
-    "app/bower_components/foundation-sites/js/foundation.util.keyboard.js",
-    "app/bower_components/foundation-sites/js/foundation.util.mediaQuery.js",
-    "app/bower_components/foundation-sites/js/foundation.util.motion.js",
-    "app/bower_components/foundation-sites/js/foundation.util.nest.js",
-    "app/bower_components/foundation-sites/js/foundation.util.timerAndImageLoader.js",
-    "app/bower_components/foundation-sites/js/foundation.util.touch.js",
-    "app/bower_components/foundation-sites/js/foundation.util.triggers.js",
+    "app/bower_components/foundation-sites/dist/foundation.js",
+
+    // "app/bower_components/foundation-sites/js/foundation.core.js",
+    // "app/bower_components/foundation-sites/js/foundation.abide.js",
+    // "app/bower_components/foundation-sites/js/foundation.accordion.js",
+    // "app/bower_components/foundation-sites/js/foundation.accordionMenu.js",
+    // "app/bower_components/foundation-sites/js/foundation.drilldown.js",
+    // "app/bower_components/foundation-sites/js/foundation.dropdown.js",
+    // "app/bower_components/foundation-sites/js/foundation.dropdownMenu.js",
+    // "app/bower_components/foundation-sites/js/foundation.equalizer.js",
+    // "app/bower_components/foundation-sites/js/foundation.interchange.js",
+    // "app/bower_components/foundation-sites/js/foundation.magellan.js",
+    // "app/bower_components/foundation-sites/js/foundation.offcanvas.js",
+    // "app/bower_components/foundation-sites/js/foundation.orbit.js",
+    // "app/bower_components/foundation-sites/js/foundation.responsiveMenu.js",
+    // "app/bower_components/foundation-sites/js/foundation.responsiveToggle.js",
+    // "app/bower_components/foundation-sites/js/foundation.reveal.js",
+    // "app/bower_components/foundation-sites/js/foundation.slider.js",
+    // "app/bower_components/foundation-sites/js/foundation.sticky.js",
+    // "app/bower_components/foundation-sites/js/foundation.tabs.js",
+    // "app/bower_components/foundation-sites/js/foundation.toggler.js",
+    // "app/bower_components/foundation-sites/js/foundation.tooltip.js",
+    // "app/bower_components/foundation-sites/js/foundation.util.box.js",
+    // "app/bower_components/foundation-sites/js/foundation.util.keyboard.js",
+    // "app/bower_components/foundation-sites/js/foundation.util.mediaQuery.js",
+    // "app/bower_components/foundation-sites/js/foundation.util.motion.js",
+    // "app/bower_components/foundation-sites/js/foundation.util.nest.js",
+    // "app/bower_components/foundation-sites/js/foundation.util.timerAndImageLoader.js",
+    // "app/bower_components/foundation-sites/js/foundation.util.touch.js",
+    // "app/bower_components/foundation-sites/js/foundation.util.triggers.js",
 
     "app/bower_components/sweetalert/dist/sweetalert-dev.js",
     "app/bower_components/velocity/velocity.js",
@@ -53,17 +57,22 @@ var externalJsPaths = [
     "app/bower_components/angular-animate/angular-animate.js",
     "app/bower_components/angular-route/angular-route.js",
     "app/bower_components/angular-velocity-revival/angular-velocity.js",
-    "app/bower_components/angular/angular.js",
-    "app/registerComponent.js",
-     "app/app.es6",
-     "app/angular-app/**/*.es6"
+    "app/bower_components/angular-touch/angular-touch.js",
+    "app/bower_components/angular-carousel/dist/angular-carousel.js"
+    // "app/bower_components/angular/angular.js"
+    // "app/registerComponent.js"
+
+     // "app/app.es6",
+     // "app/angular-app/**/*.es6"
 ];
 
-var externalJsPathsNoBabel = [
-    "app/bower_components/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js"
-];
+// var externalJsPathsNoBabel = [
+//     "app/bower_components/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js",
+//     // "app/bower_components/foundation-sites/js/foundation.orbit.js"
+// ];
 
 var appJsPaths = [
+    "app/registerComponent.js",
     "app/app.es6",
     "app/angular-app/**/*.es6",
     "app/angular-app/**/*.js"
@@ -91,8 +100,8 @@ gulp.task('sass', function() {
 gulp.task("js.external", function () {
     return gulp.src(externalJsPaths)
         //.pipe(sourcemaps.init())
-        .pipe(babel())
-        .pipe(addsrc(externalJsPathsNoBabel))
+        //.pipe(babel())
+        //.pipe(addsrc.prepend(externalJsPathsNoBabel))
         .pipe(concat("dependencies.js"))
         //.pipe(sourcemaps.write("."))
         .pipe(minify({

@@ -1,8 +1,13 @@
-@import url(https://fonts.googleapis.com/css?family=Oswald:400,300);
-@import url(https://fonts.googleapis.com/css?family=Lato:400,400italic);
+//@import url(https://fonts.googleapis.com/css?family=Oswald:400,300);
+//@import url(https://fonts.googleapis.com/css?family=Lato:400,400italic);
+
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Josefin+Sans:400,300);
+
 @import "settings";
 @import "../bower_components/font-awesome/scss/font-awesome";
 @import "../bower_components/foundation-sites/scss/foundation";
+//@import "../bower_components/motion-ui/src/motion-ui";
+@import "../bower_components/angular-carousel/src/css/angular-carousel";
 @import "../bower_components/sweetalert/dev/sweetalert";
 
 @include foundation-everything(true);
@@ -14,6 +19,7 @@
 @import "contact-card";
 @import "form";
 @import "pricing-table";
+@import "carousel";
 
 @import "about-us";
 @import "home";

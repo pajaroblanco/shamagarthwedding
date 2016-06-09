@@ -6,7 +6,8 @@ var angularApp = angular.module('app', [
     'app.directives',
     'app.services',
     'angular-velocity',
-    'ngAnimate'
+    'ngAnimate',
+    'angular-carousel'
 ]);
 
 angularApp.config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {

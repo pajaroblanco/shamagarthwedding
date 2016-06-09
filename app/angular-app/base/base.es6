@@ -22,11 +22,11 @@ class BaseController {
         };
 
         this.navLinks = [
-            {label: 'Home', smallLabel: $sce.trustAsHtml('<i class="fa fa-home"></i><span>Home</span>'), href: '#/', isActive: false},
-            {label: 'Portfolio', smallLabel: $sce.trustAsHtml('<i class="fa fa-youtube-play"></i><span>Portfolio</span>'), href: '#/portfolio', isActive: false},
-            {label: 'Pricing', smallLabel: $sce.trustAsHtml('<i class="fa fa-dollar"></i><span>Pricing</span>'), href: '#/pricing', isActive: false},
-            {label: 'About Us', smallLabel: $sce.trustAsHtml('<i class="fa fa-user"></i><span>About Us</span>'), href: '#/about', isActive: false},
-            {label: 'Contact Us', smallLabel: $sce.trustAsHtml('<i class="fa fa-phone"></i><span>Contact Us</span>'), href: '#/contact', isActive: false}
+            {label: 'Ceremony', smallLabel: $sce.trustAsHtml('<span>Ceremony</span>'), href: '#/', isActive: false},
+            {label: 'Reception', smallLabel: $sce.trustAsHtml('<span>Reception</span>'), href: '#/portfolio', isActive: false},
+            {label: 'Afterparty', smallLabel: $sce.trustAsHtml('<span>Afterparty</span>'), href: '#/pricing', isActive: false}
+            // {label: 'About Us', smallLabel: $sce.trustAsHtml('<i class="fa fa-user"></i><span>About Us</span>'), href: '#/about', isActive: false},
+            // {label: 'Contact Us', smallLabel: $sce.trustAsHtml('<i class="fa fa-phone"></i><span>Contact Us</span>'), href: '#/contact', isActive: false}
         ];
 
         this.init($scope);

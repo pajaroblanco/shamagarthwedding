@@ -1,0 +1,41 @@
+ul[rn-carousel] {
+  max-height: 100vh;
+  width: 100%;
+  margin: 0;
+
+  @include breakpoint(medium up) {
+    max-height: 70vh;
+  }
+
+  @include breakpoint (xlarge up) {
+    max-height: 70vh;
+  }
+
+  & > li {
+    & > img {
+      width: 100%;
+    }
+
+    position:relative;
+
+    &:before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      background-color: rgba(81, 40, 25, 0.49);
+      position:absolute;
+    }
+  }
+}
+
+.carousel-overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.55);
+  width: 100%;
+  height: inherit;
+  top: 0;
+
+  @include breakpoint(small only) {
+    top: $topbar-height;
+  }
+}
