@@ -37,7 +37,7 @@ angularApp.config(['$locationProvider', '$routeProvider', function ($locationPro
 }]);
 
 angularApp.run([function () {
-    $(document).foundation();
+    //$(document).foundation();
 }]);
 
 /**
@@ -369,13 +369,13 @@ var HomeController = function () {
     _createClass(HomeController, [{
         key: 'init',
         value: function init() {
-            var _this = this;
-
             this.$rootScope.appData.smallScreenHeader = 'Cinescape';
             this.$rootScope.appData.isLight = true;
 
             this.$timeout(function () {
-                _this.velocity($('.hero-text').find('p,h1,button'), 'transition.slideUpIn', { duration: 1000, stagger: 100, drag: true });
+                $(document).foundation();
+
+                //this.velocity($('.hero-text').find('p,h1,button'), 'transition.slideUpIn', {duration: 1000, stagger: 100, drag: true});
             }, 0);
         }
     }, {

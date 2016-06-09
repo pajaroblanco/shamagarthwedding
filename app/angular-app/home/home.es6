@@ -25,7 +25,9 @@ class HomeController {
         this.$rootScope.appData.isLight = true;
 
         this.$timeout(() => {
-            this.velocity($('.hero-text').find('p,h1,button'), 'transition.slideUpIn', {duration: 1000, stagger: 100, drag: true});
+            $(document).foundation();
+
+            //this.velocity($('.hero-text').find('p,h1,button'), 'transition.slideUpIn', {duration: 1000, stagger: 100, drag: true});
         }, 0);
     }
 

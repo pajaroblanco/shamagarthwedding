@@ -48,7 +48,7 @@ angularApp.config(['$locationProvider', '$routeProvider', function ($locationPro
 }]);
 
 angularApp.run([function() {
-    $(document).foundation();
+    //$(document).foundation();
 }]);
 
 /**

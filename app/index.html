@@ -45,13 +45,13 @@
 
                     <header>
                         <div class="row full-width">
-                            <div class="column">
-                                <a class="logo" href="#/">
-                                    <i></i>
-                                </a>
+                            <div class="column show-for-medium text-center">
+                                <h1>Shama & Garth</h1>
                             </div>
+                        </div>
+                        <div class="row full-width">
                             <div class="column show-for-medium">
-                                <ul class="menu align-right" ng-class="{light: base.$rootScope.appData.isLight}">
+                                <ul class="menu align-center" ng-class="{light: base.$rootScope.appData.isLight}">
                                     <li ng-repeat="navLink in base.navLinks track by navLink.label">
                                         <a ng-href="{{navLink.href}}" ng-class="{active: navLink.isActive}" ng-bind="navLink.label"></a>
                                     </li>
