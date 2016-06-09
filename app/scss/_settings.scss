@@ -1,7 +1,7 @@
 $active-navigation-link-color: orange;
 $fa-font-path:   "../dist/fonts";
 $gray-text-color: #444444;
-$gray-bg-color: #f9f9f9;
+$colored-bg-color: rgba(203,146,134,.1);;
 $topbar-height: 56px;
 
 //  Foundation for Sites Settings
@@ -540,7 +540,7 @@ $thumbnail-radius: $global-radius;
 // 34. Title Bar
 // -------------
 
-$titlebar-background: $black;
+$titlebar-background: #3C2F2F;;
 $titlebar-color: $white;
 $titlebar-padding: 0.5rem;
 $titlebar-text-font-weight: bold;

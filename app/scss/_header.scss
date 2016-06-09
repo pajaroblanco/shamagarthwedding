@@ -6,7 +6,7 @@ header {
 
   @include breakpoint(small only) {
     //height: auto;
-    display: none;
+    //display: none;
   }
 
   .row:first-of-type {
@@ -31,7 +31,23 @@ header {
     font-size: 88px;
     font-weight: 600;
     text-transform: none;
-    margin-top: 85px;
+    margin-top: 30vh;
+    letter-spacing: -4.4px;
+
+    @include breakpoint(small only) {
+      font-size: 45px;
+      letter-spacing: initial;
+    }
+  }
+
+  p {
+    font-size: 22px;
+    line-height: 1.6em;
+    text-transform: none;
+    letter-spacing: .6px;
+    font-weight: 400;
+    font-style: normal;
+    color: rgba(255,255,255,.8);
   }
 
   ul.menu {

@@ -22,9 +22,9 @@ class BaseController {
         };
 
         this.navLinks = [
-            {label: 'Ceremony', smallLabel: $sce.trustAsHtml('<span>Ceremony</span>'), href: '#/', isActive: false},
-            {label: 'Reception', smallLabel: $sce.trustAsHtml('<span>Reception</span>'), href: '#/portfolio', isActive: false},
-            {label: 'Afterparty', smallLabel: $sce.trustAsHtml('<span>Afterparty</span>'), href: '#/pricing', isActive: false}
+            {label: 'Ceremony', smallLabel: $sce.trustAsHtml('<span>Ceremony</span>'), section: 'ceremony', isActive: false},
+            {label: 'Reception', smallLabel: $sce.trustAsHtml('<span>Reception</span>'), section: 'reception', isActive: false},
+            {label: 'Afterparty', smallLabel: $sce.trustAsHtml('<span>Afterparty</span>'), section: 'afterparty', isActive: false}
             // {label: 'About Us', smallLabel: $sce.trustAsHtml('<i class="fa fa-user"></i><span>About Us</span>'), href: '#/about', isActive: false},
             // {label: 'Contact Us', smallLabel: $sce.trustAsHtml('<i class="fa fa-phone"></i><span>Contact Us</span>'), href: '#/contact', isActive: false}
         ];
@@ -34,50 +34,54 @@ class BaseController {
 
     init($scope) {
         //when the user navigates to a new page, clear the page messages/errors
-        $scope.$on('$locationChangeStart', event => {
-            let currentPath = this.$location.path();
-            switch (currentPath) {
-                case '/':
-                    this.setLinksInactive();
-                    this._.find(this.navLinks, {href: '#/'}).isActive = true;
-                    break;
-                case '/about':
-                    this.setLinksInactive();
-                    this._.find(this.navLinks, {href: '#/about'}).isActive = true;
-                    break;
-                case '/contact':
-                    this.setLinksInactive();
-                    this._.find(this.navLinks, {href: '#/contact'}).isActive = true;
-                    break;
-                case '/portfolio':
-                    this.setLinksInactive();
-                    this._.find(this.navLinks, {href: '#/portfolio'}).isActive = true;
-                    break;
-                case '/pricing':
-                    this.setLinksInactive();
-                    this._.find(this.navLinks, {href: '#/pricing'}).isActive = true;
-                    break;
-            }
-
-            this.scrollToTop(0);
-        });
+        // $scope.$on('$locationChangeStart', event => {
+        //     let currentPath = this.$location.path();
+        //     switch (currentPath) {
+        //         case '/':
+        //             this.setLinksInactive();
+        //             this._.find(this.navLinks, {href: '#/'}).isActive = true;
+        //             break;
+        //         case '/about':
+        //             this.setLinksInactive();
+        //             this._.find(this.navLinks, {href: '#/about'}).isActive = true;
+        //             break;
+        //         case '/contact':
+        //             this.setLinksInactive();
+        //             this._.find(this.navLinks, {href: '#/contact'}).isActive = true;
+        //             break;
+        //         case '/portfolio':
+        //             this.setLinksInactive();
+        //             this._.find(this.navLinks, {href: '#/portfolio'}).isActive = true;
+        //             break;
+        //         case '/pricing':
+        //             this.setLinksInactive();
+        //             this._.find(this.navLinks, {href: '#/pricing'}).isActive = true;
+        //             break;
+        //     }
+        //
+        //     this.scrollToTop(0);
+        // });
     }
 
-    setLinksInactive() {
-        this._.forEach(this.navLinks, link => {link.isActive = false});
+    scrollToSection(section) {
+        this.velocity($('.' + section), 'scroll', {duration: 1000, easing: 'easeOutExpo'});
     }
+
+    // setLinksInactive() {
+    //     this._.forEach(this.navLinks, link => {link.isActive = false});
+    // }
 
     afterViewEnter() {
         $('#view').attr('style', '');
     }
 
-    onScrollToTopClick() {
-        this.scrollToTop(350);
-    }
-
-    scrollToTop(duration) {
-        this.velocity($('html'), 'scroll', {duration: duration});
-    }
+    // onScrollToTopClick() {
+    //     this.scrollToTop(350);
+    // }
+    //
+    // scrollToTop(duration) {
+    //     this.velocity($('html'), 'scroll', {duration: duration});
+    // }
 }
 
 registerComponent('app.controllers').controller(BaseController.getName(), BaseController.getDependencies());

@@ -1,82 +1,103 @@
-<div class="row full-width">
+<header>
+    <div class="row full-width">
+        <div class="column show-for-medium text-center">
+            <h2>Shama & Garth</h2>
+        </div>
+    </div>
+    <div class="row full-width">
+        <div class="column show-for-medium">
+            <ul class="menu align-center">
+                <li ng-repeat="navLink in base.navLinks track by navLink.label">
+                    <a ng-click="base.scrollToSection(navLink.section)" ng-bind="navLink.label"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--<div class="row full-width text-center">-->
+    <!--<div class="column">-->
+    <!--<h1>We're Engaged!</h1>-->
+    <!--<p>Tying the knot December 18, 2016</p>-->
+    <!--</div>-->
+    <!--</div>-->
+</header>
 
-    <ul rn-carousel class="image">
-        <li><img src="dist/images/hero-orbit/_MG_0858.jpg" alt="1"/></li>
-        <li>slide #2</li>
-        <li>slide #3</li>
+<div class="row carousel-wrapper align-middle">
+    <ul rn-carousel
+        class="image"
+        rn-carousel-transition="slide"
+        rn-carousel-buffered
+        rn-carousel-controls
+        rn-carousel-controls-allow-loop
+        rn-carousel-duration="1200"
+        rn-carousel-easing="easeInOutQuart"
+        rn-carousel-index="vm.carousel.carouselIndex"
+        rn-carousel-auto-slide="7">
+
+        <li ng-repeat="imgSrc in vm.carousel.images track by $index"><div class="image" ng-style="{'background-image': 'url(dist/images/hero-orbit/' + imgSrc + ')'}"></div></li>
     </ul>
-
+    <div rn-carousel-indicators ng-if="vm.carousel.images.length > 1" slides="vm.carousel.images" rn-carousel-index="vm.carousel.carouselIndex"></div>
     <div class="carousel-overlay"></div>
-    <div class="column text-center carousel-text">
 
-        <!--<p style="opacity: 0"><em>Cinescape</em></p>-->
-        <h1>We're Engaged!</h1>
-        <!--&lt;!&ndash;<p>&ndash;&gt;-->
-            <!--&lt;!&ndash;Servicing the <span>Southern California</span> area&ndash;&gt;-->
-        <!--&lt;!&ndash;</p>&ndash;&gt;-->
-        <!--<button style="opacity: 0" ng-click="vm.onLearnMore()" class="button large">Learn More</button>-->
+    <div class="carousel-text">
+        <h1>We're Engaged</h1>
+        <p>Tying the knot December 18, 2016</p>
     </div>
 </div>
 
 <div class="home-content">
+    <div class="row full-width ceremony">
+        <div class="column">
+            <div class="row standard-width">
+                <div class="column text-center">
+                    <div class="image" style="background-image: url(dist/images/hero-orbit/_MG_0858.jpg)"></div>
+                    <h2>The Ceremony</h2>
 
-    <!--<div class="row full-width">-->
-        <!--<div class="column">-->
-            <!--<div class="row standard-width">-->
-                <!--<div class="column text-center">-->
-                    <!--<h2>Licensed by the FAA</h2>-->
-                    <!--<hr>-->
-                    <!--<div class="row align-middle">-->
-                        <!--<div class="small-12 medium-8 columns small-order-2 medium-order-1">-->
-                            <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, aliquam commodi consequuntur cum doloribus eius eum ex, harum id incidunt iste itaque libero molestiae provident quia quidem similique vel voluptates.</p>-->
-                        <!--</div>-->
-                        <!--<div class="small-12 medium-4 columns small-order-1 medium-order-2">-->
-                            <!--<img src="dist/images/faa-logo.png" alt="FAA Logo"/>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
+                    <p><strong>4:00 PM</strong></p>
+                    <p>
+                        Grace Church<br>
+                        37 Bear Blvd<br>
+                        Flagstaff, AZ 86001
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <!--<div class="row full-width">-->
-        <!--<div class="column">-->
-            <!--<div class="row standard-width">-->
-                <!--<div class="column text-center">-->
-                    <!--<h2>Well Equipped</h2>-->
-                    <!--<hr>-->
-                    <!--<div class="row align-middle">-->
-                        <!--<div class="small-12 medium-4 columns">-->
-                            <!--<img src="http://www.aerialvideoandphoto.com/Aerial_Camera_Gear_files/shapeimage_5.png" alt="Aerial Drone"/>-->
-                        <!--</div>-->
-                        <!--<div class="small-12 medium-8 columns">-->
-                            <!--<p>Our outdoor footage is shot with a S1000+ drone mounted with a Movi M5 gimbal and a Sony A7s mark II 4K camera. This means you get beautifully stabilized 4K footage of the property flown by an FAA licensed pilot.</p>-->
-                            <!--&lt;!&ndash;<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, aliquam commodi consequuntur cum doloribus eius eum ex, harum id incidunt iste itaque libero molestiae provident quia quidem similique vel voluptates.</p>&ndash;&gt;-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
+    <div class="row full-width reception">
+        <div class="column">
+            <div class="row standard-width">
+                <div class="column text-center">
+                    <div class="image" style="background-image: url(dist/images/hero-orbit/_MG_0858.jpg)"></div>
+                    <h2>Reception</h2>
 
-    <!--<div class="row full-width">-->
-        <!--<div class="column">-->
-            <!--<div class="row standard-width">-->
-                <!--<div class="column text-center">-->
-                    <!--<h2>Professionally Edited 4K Video</h2>-->
-                    <!--<hr>-->
-                    <!--<div class="row align-middle">-->
-                        <!--<div class="small-12 medium-8 columns small-order-2 medium-order-1">-->
-                            <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, aliquam commodi consequuntur cum doloribus eius eum ex, harum id incidunt iste itaque libero molestiae provident quia quidem similique vel voluptates.</p>-->
-                        <!--</div>-->
-                        <!--<div class="small-12 medium-4 columns small-order-1 medium-order-2">-->
-                            <!--<img src="http://roguevalleyvideo.com/wp-content/uploads/2015/03/video-editing-workstation.jpg" alt="Video Editing Software"/>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
+                    <p><strong>4:00 PM</strong></p>
+                    <p>
+                        Grace Church<br>
+                        37 Bear Blvd<br>
+                        Flagstaff, AZ 86001
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row full-width afterparty">
+        <div class="column">
+            <div class="row standard-width">
+                <div class="column text-center">
+                    <div class="image" style="background-image: url(dist/images/hero-orbit/_MG_0858.jpg)"></div>
+                    <h2>Afterparty</h2>
+
+                    <p><strong>4:00 PM</strong></p>
+                    <p>
+                        Grace Church<br>
+                        37 Bear Blvd<br>
+                        Flagstaff, AZ 86001
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!--<div class="row full-width">-->
         <!--<div class="column text-center">-->

@@ -11,6 +11,11 @@
 
   ul.menu {
     & > li {
+      a {
+        //margin-bottom: 1rem;
+        margin-top: 1rem;
+      }
+
       i {
         position: relative;
         top: 1px;
@@ -18,7 +23,7 @@
       }
       span {
         position: absolute;
-        left: 2.75rem;
+        left: 1.75rem;
       }
     }
   }

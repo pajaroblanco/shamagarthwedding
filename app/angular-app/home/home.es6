@@ -8,14 +8,24 @@ class HomeController {
     }
 
     static getDependencies() {
-        return ['$http', '$rootScope', '$timeout', 'velocity', HomeController];
+        return ['$http', '$rootScope', '$timeout', 'velocity', '$sce', HomeController];
     }
 
-    constructor($http, $rootScope, $timeout, velocity) {
+    constructor($http, $rootScope, $timeout, velocity, $sce) {
         this.$http = $http;
         this.$rootScope = $rootScope;
         this.$timeout = $timeout;
         this.velocity = velocity;
+        this.$sce = $sce;
+
+        this.carousel = {
+            images: [
+                '_MG_0893.jpg',
+                '_MG_0975.jpg',
+                '_MG_1127.jpg'
+            ],
+            carouselIndex: 0
+        };
 
         this.init();
     }
@@ -29,10 +39,6 @@ class HomeController {
 
             //this.velocity($('.hero-text').find('p,h1,button'), 'transition.slideUpIn', {duration: 1000, stagger: 100, drag: true});
         }, 0);
-    }
-
-    onLearnMore() {
-        this.velocity($('.home-content > .row:first'), 'scroll', {duration: 1000, easing: 'easeOutExpo'});
     }
 }
 

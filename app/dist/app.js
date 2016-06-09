@@ -337,7 +337,7 @@ var BaseController = function () {
             activeNavigationLink: 'home'
         };
 
-        this.navLinks = [{ label: 'Ceremony', smallLabel: $sce.trustAsHtml('<span>Ceremony</span>'), href: '#/', isActive: false }, { label: 'Reception', smallLabel: $sce.trustAsHtml('<span>Reception</span>'), href: '#/portfolio', isActive: false }, { label: 'Afterparty', smallLabel: $sce.trustAsHtml('<span>Afterparty</span>'), href: '#/pricing', isActive: false }
+        this.navLinks = [{ label: 'Ceremony', smallLabel: $sce.trustAsHtml('<span>Ceremony</span>'), section: 'ceremony', isActive: false }, { label: 'Reception', smallLabel: $sce.trustAsHtml('<span>Reception</span>'), section: 'reception', isActive: false }, { label: 'Afterparty', smallLabel: $sce.trustAsHtml('<span>Afterparty</span>'), section: 'afterparty', isActive: false }
         // {label: 'About Us', smallLabel: $sce.trustAsHtml('<i class="fa fa-user"></i><span>About Us</span>'), href: '#/about', isActive: false},
         // {label: 'Contact Us', smallLabel: $sce.trustAsHtml('<i class="fa fa-phone"></i><span>Contact Us</span>'), href: '#/contact', isActive: false}
         ];
@@ -348,59 +348,59 @@ var BaseController = function () {
     _createClass(BaseController, [{
         key: 'init',
         value: function init($scope) {
-            var _this = this;
-
             //when the user navigates to a new page, clear the page messages/errors
-            $scope.$on('$locationChangeStart', function (event) {
-                var currentPath = _this.$location.path();
-                switch (currentPath) {
-                    case '/':
-                        _this.setLinksInactive();
-                        _this._.find(_this.navLinks, { href: '#/' }).isActive = true;
-                        break;
-                    case '/about':
-                        _this.setLinksInactive();
-                        _this._.find(_this.navLinks, { href: '#/about' }).isActive = true;
-                        break;
-                    case '/contact':
-                        _this.setLinksInactive();
-                        _this._.find(_this.navLinks, { href: '#/contact' }).isActive = true;
-                        break;
-                    case '/portfolio':
-                        _this.setLinksInactive();
-                        _this._.find(_this.navLinks, { href: '#/portfolio' }).isActive = true;
-                        break;
-                    case '/pricing':
-                        _this.setLinksInactive();
-                        _this._.find(_this.navLinks, { href: '#/pricing' }).isActive = true;
-                        break;
-                }
-
-                _this.scrollToTop(0);
-            });
+            // $scope.$on('$locationChangeStart', event => {
+            //     let currentPath = this.$location.path();
+            //     switch (currentPath) {
+            //         case '/':
+            //             this.setLinksInactive();
+            //             this._.find(this.navLinks, {href: '#/'}).isActive = true;
+            //             break;
+            //         case '/about':
+            //             this.setLinksInactive();
+            //             this._.find(this.navLinks, {href: '#/about'}).isActive = true;
+            //             break;
+            //         case '/contact':
+            //             this.setLinksInactive();
+            //             this._.find(this.navLinks, {href: '#/contact'}).isActive = true;
+            //             break;
+            //         case '/portfolio':
+            //             this.setLinksInactive();
+            //             this._.find(this.navLinks, {href: '#/portfolio'}).isActive = true;
+            //             break;
+            //         case '/pricing':
+            //             this.setLinksInactive();
+            //             this._.find(this.navLinks, {href: '#/pricing'}).isActive = true;
+            //             break;
+            //     }
+            //
+            //     this.scrollToTop(0);
+            // });
         }
     }, {
-        key: 'setLinksInactive',
-        value: function setLinksInactive() {
-            this._.forEach(this.navLinks, function (link) {
-                link.isActive = false;
-            });
+        key: 'scrollToSection',
+        value: function scrollToSection(section) {
+            this.velocity($('.' + section), 'scroll', { duration: 1000, easing: 'easeOutExpo' });
         }
+
+        // setLinksInactive() {
+        //     this._.forEach(this.navLinks, link => {link.isActive = false});
+        // }
+
     }, {
         key: 'afterViewEnter',
         value: function afterViewEnter() {
             $('#view').attr('style', '');
         }
-    }, {
-        key: 'onScrollToTopClick',
-        value: function onScrollToTopClick() {
-            this.scrollToTop(350);
-        }
-    }, {
-        key: 'scrollToTop',
-        value: function scrollToTop(duration) {
-            this.velocity($('html'), 'scroll', { duration: duration });
-        }
+
+        // onScrollToTopClick() {
+        //     this.scrollToTop(350);
+        // }
+        //
+        // scrollToTop(duration) {
+        //     this.velocity($('html'), 'scroll', {duration: duration});
+        // }
+
     }]);
 
     return BaseController;
@@ -505,17 +505,23 @@ var HomeController = function () {
     }, {
         key: 'getDependencies',
         value: function getDependencies() {
-            return ['$http', '$rootScope', '$timeout', 'velocity', HomeController];
+            return ['$http', '$rootScope', '$timeout', 'velocity', '$sce', HomeController];
         }
     }]);
 
-    function HomeController($http, $rootScope, $timeout, velocity) {
+    function HomeController($http, $rootScope, $timeout, velocity, $sce) {
         _classCallCheck(this, HomeController);
 
         this.$http = $http;
         this.$rootScope = $rootScope;
         this.$timeout = $timeout;
         this.velocity = velocity;
+        this.$sce = $sce;
+
+        this.carousel = {
+            images: ['_MG_0893.jpg', '_MG_0975.jpg', '_MG_1127.jpg'],
+            carouselIndex: 0
+        };
 
         this.init();
     }
@@ -531,11 +537,6 @@ var HomeController = function () {
 
                 //this.velocity($('.hero-text').find('p,h1,button'), 'transition.slideUpIn', {duration: 1000, stagger: 100, drag: true});
             }, 0);
-        }
-    }, {
-        key: 'onLearnMore',
-        value: function onLearnMore() {
-            this.velocity($('.home-content > .row:first'), 'scroll', { duration: 1000, easing: 'easeOutExpo' });
         }
     }]);
 

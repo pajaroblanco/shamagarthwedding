@@ -1,41 +1,150 @@
-ul[rn-carousel] {
-  max-height: 100vh;
-  width: 100%;
-  margin: 0;
+.carousel-wrapper {
 
-  @include breakpoint(medium up) {
-    max-height: 70vh;
-  }
+  max-width: 100%;
+  position: relative;
 
-  @include breakpoint (xlarge up) {
-    max-height: 70vh;
-  }
+  ul[rn-carousel] {
+    height: 50vh;
+    width: 100%;
+    margin: 0;
 
-  & > li {
-    & > img {
-      width: 100%;
+    @include breakpoint(medium up) {
+      height: 70vh;
     }
 
-    position:relative;
+    @include breakpoint (xlarge up) {
+      height: 70vh;
+    }
 
-    &:before {
-      content: "";
-      width: 100%;
-      height: 100%;
-      background-color: rgba(81, 40, 25, 0.49);
+    & > li {
+      & > div.image {
+        text-align: right;
+        color: white;
+        background-size: cover;
+        height: 100%;
+        //background-position: center center;
+        background-position-x: 50%;
+        background-position-y: 15%;
+      }
+
       position:absolute;
+
+      &:before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: rgba(81, 40, 25, 0.49);
+        position:absolute;
+      }
     }
   }
-}
 
-.carousel-overlay {
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.55);
-  width: 100%;
-  height: inherit;
-  top: 0;
+  .carousel-overlay {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.55);
+    width: 100%;
+    height: inherit;
+    top: 0;
 
-  @include breakpoint(small only) {
-    top: $topbar-height;
+    @include breakpoint(small only) {
+      top: $topbar-height;
+    }
+  }
+
+  .carousel-text {
+    position: absolute;
+    top: 57%;
+    display: inline-block;
+    left: 0;
+    width: 100%;
+    text-align: center;
+
+    @include breakpoint(small only) {
+      top: 39%;
+    }
+
+    h1 {
+      color: white;
+      font-size: 88px;
+      font-weight: 600;
+      text-transform: none;
+      //margin-top: 30vh;
+      letter-spacing: -4.4px;
+
+      @include breakpoint(small only) {
+        font-size: 35px;
+        letter-spacing: initial;
+      }
+    }
+
+    p {
+      font-size: 22px;
+      line-height: 1.6em;
+      text-transform: none;
+      letter-spacing: .6px;
+      font-weight: 400;
+      font-style: normal;
+      color: rgba(255,255,255,.8);
+
+      @include breakpoint(small only) {
+        font-size: 100%;
+      }
+    }
+  }
+
+  .rn-carousel-controls {
+    .rn-carousel-control-next, .rn-carousel-control-prev {
+      z-index: 100;
+      color: white;
+      //background-color: rgba(0, 0, 0, 0.5);
+      padding-left: 10px;
+      padding-right: 10px;
+
+      @include breakpoint(small only) {
+        font-size: 1.5rem;
+      }
+    }
+
+    .rn-carousel-control-next {
+      font-family: 'FontAwesome';
+
+      &:before {
+        content: "\f138";
+      }
+    }
+
+    .rn-carousel-control-prev {
+      font-family: 'FontAwesome';
+
+      &:before {
+        content: "\f137";
+      }
+    }
+  }
+
+  div[rn-carousel-indicators] {
+    position: relative;
+    width: 100%;
+    display: block;
+    text-align: center;
+    top: -56px;
+
+    .rn-carousel-indicator {
+      //position: relative;
+      //top: -50px;
+      ///* left: calc(50% - 25px); */
+      //display: inline-block;
+
+      span {
+        font-size: 180%;
+        color: rgba(255, 174, 128, 0.38);
+        margin-left: 2px;
+        margin-right: 2px;
+
+        &.active {
+          color: white;
+        }
+      }
+    }
   }
 }
