@@ -418,64 +418,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  * Created by Brandon on 6/2/2016.
  */
 
-var HomeController = function () {
-    _createClass(HomeController, null, [{
-        key: 'getName',
-        value: function getName() {
-            return 'HomeCtrl';
-        }
-    }, {
-        key: 'getDependencies',
-        value: function getDependencies() {
-            return ['$http', '$rootScope', '$timeout', 'velocity', '$sce', HomeController];
-        }
-    }]);
-
-    function HomeController($http, $rootScope, $timeout, velocity, $sce) {
-        _classCallCheck(this, HomeController);
-
-        this.$http = $http;
-        this.$rootScope = $rootScope;
-        this.$timeout = $timeout;
-        this.velocity = velocity;
-        this.$sce = $sce;
-
-        this.carousel = {
-            images: ['5.jpg', '1.jpg', '4.jpg', '2.jpg', '3.jpg'],
-            carouselIndex: 0
-        };
-
-        this.init();
-    }
-
-    _createClass(HomeController, [{
-        key: 'init',
-        value: function init() {
-            this.$rootScope.appData.smallScreenHeader = 'Cinescape';
-            this.$rootScope.appData.isLight = true;
-
-            this.$timeout(function () {
-                $(document).foundation();
-
-                //this.velocity($('.hero-text').find('p,h1,button'), 'transition.slideUpIn', {duration: 1000, stagger: 100, drag: true});
-            }, 0);
-        }
-    }]);
-
-    return HomeController;
-}();
-
-registerComponent('app.controllers').controller(HomeController.getName(), HomeController.getDependencies());
-'use strict';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-/**
- * Created by Brandon on 6/2/2016.
- */
-
 var ContactUsController = function () {
     _createClass(ContactUsController, null, [{
         key: 'getName',
@@ -545,6 +487,64 @@ var ContactUsController = function () {
 }();
 
 registerComponent('app.controllers').controller(ContactUsController.getName(), ContactUsController.getDependencies());
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+/**
+ * Created by Brandon on 6/2/2016.
+ */
+
+var HomeController = function () {
+    _createClass(HomeController, null, [{
+        key: 'getName',
+        value: function getName() {
+            return 'HomeCtrl';
+        }
+    }, {
+        key: 'getDependencies',
+        value: function getDependencies() {
+            return ['$http', '$rootScope', '$timeout', 'velocity', '$sce', HomeController];
+        }
+    }]);
+
+    function HomeController($http, $rootScope, $timeout, velocity, $sce) {
+        _classCallCheck(this, HomeController);
+
+        this.$http = $http;
+        this.$rootScope = $rootScope;
+        this.$timeout = $timeout;
+        this.velocity = velocity;
+        this.$sce = $sce;
+
+        this.carousel = {
+            images: ['5.jpg', '1.jpg', '4.jpg', '2.jpg', '3.jpg'],
+            carouselIndex: 0
+        };
+
+        this.init();
+    }
+
+    _createClass(HomeController, [{
+        key: 'init',
+        value: function init() {
+            this.$rootScope.appData.smallScreenHeader = 'Cinescape';
+            this.$rootScope.appData.isLight = true;
+
+            this.$timeout(function () {
+                $(document).foundation();
+
+                //this.velocity($('.hero-text').find('p,h1,button'), 'transition.slideUpIn', {duration: 1000, stagger: 100, drag: true});
+            }, 0);
+        }
+    }]);
+
+    return HomeController;
+}();
+
+registerComponent('app.controllers').controller(HomeController.getName(), HomeController.getDependencies());
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();

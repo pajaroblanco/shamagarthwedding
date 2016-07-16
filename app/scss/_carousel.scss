@@ -60,7 +60,7 @@
     text-align: center;
 
     @include breakpoint(small only) {
-      top: 39%;
+      top: 53%;
     }
 
     h1 {
@@ -87,7 +87,7 @@
       color: rgba(255,255,255,.8);
 
       @include breakpoint(small only) {
-        font-size: 100%;
+        font-size: 90%;
       }
     }
   }
