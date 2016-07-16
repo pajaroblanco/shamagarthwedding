@@ -7,8 +7,29 @@
     <div class="row full-width align-center">
         <div class="column show-for-medium">
             <ul class="menu align-center">
-                <li ng-repeat="navLink in base.navLinks track by navLink.label">
-                    <a ng-click="base.scrollToSection(navLink.section)" ng-bind="navLink.label"></a>
+                <!--<li ng-repeat="navLink in base.navLinks track by navLink.label">-->
+                    <!--<a ng-click="base.scrollToSection(navLink.section)" ng-bind="navLink.label"></a>-->
+                <!--</li>-->
+                <li>
+                    <a ng-click="base.scrollToSection('destination')">Destination</a>
+                </li>
+                <!--<li>-->
+                    <!--<a ng-click="base.scrollToSection('mehndi')">Wedding Events</a>-->
+                <!--</li>-->
+                <ul class="dropdown menu align-left" style="width:167px" data-dropdown-menu>
+                    <li>
+                        <a href="#">Wedding Events</a>
+                        <ul class="menu">
+                            <li><a ng-click="base.scrollToSection('mehndi')">Mehndi/Sangeet</a></li>
+                            <li><a ng-click="base.scrollToSection('ceremony')">The Ceremonies</a></li>
+                            <li><a ng-click="base.scrollToSection('reception')">Reception</a></li>
+                            <li><a ng-click="base.scrollToSection('adios')">Gracias & Adios Brunch</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <li>
+                    <a ng-click="base.scrollToSection('travel')">Travel Info</a>
                 </li>
             </ul>
         </div>
@@ -127,7 +148,7 @@
         </div>
     </div>
 
-    <div class="row full-width afterparty align-center">
+    <div class="row full-width adios align-center">
         <div class="column">
             <div class="row standard-width">
                 <div class="column text-center">
@@ -142,6 +163,55 @@
                     <p>
                         Close out the weekend with a festive brunch to say thanks to everyone who made it out to celebrate with us.
                     </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row full-width travel align-center">
+        <div class="column">
+            <div class="row standard-width">
+                <div class="column text-center">
+                    <h2>Travel Information</h2>
+
+                    <!--<p>-->
+                        <!--<strong>-->
+                            <!--Sunday, December 4th, 11:00 AM-->
+                        <!--</strong>-->
+                    <!--</p>-->
+                    <p>
+                        We are so excited and blessed to start our lives together and plan to do so with a fantastic wedding
+                        celebration! We would be thrilled if you were able to join us in the festivities! Our location is exquisite
+                        and we know that you will enjoy the beautiful resort while also getting a little vacation time with your
+                        families.
+                        Below are a few brief details regarding travel arrangements (additional information will be mailed with
+                        the invitation). Be sure to check back on our website as we will update it should any changes arise or
+                        more information becomes available.
+                    </p>
+                    <hr style="margin-top:1.5rem;margin-bottom:1.5rem;">
+                    <div class="text-left">
+                        <p>
+                            <strong>Traveling from the Southern California:</strong>
+                        </p>
+                        <ul class="text-left">
+                            <li>
+                                Nonstop flights to Puerto Vallarta Airport (PVR) are available from Los Angeles Airport (LAX) and
+                                John Wayne Airport (SNA). Participating airlines include Southwest, Alaska, Delta, and United.
+                            </li>
+                            <li>
+                                If you are interested in traveling with our group from SNA, please contact us so you can be included
+                                in the group booking.
+                            </li>
+                        </ul>
+                        <p>
+                            <strong>On-Resort Tips:</strong>
+                        </p>
+                        <ul class="text-left">
+                            <li>
+                                Transportation will be arranged from PVR airport to the resort for those not renting a car.
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

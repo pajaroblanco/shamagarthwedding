@@ -56,8 +56,8 @@ header {
     li {
       a {
         transition: color .1s 0s ease-in-out;
-        line-height: .5;
-        color: rgba(255,255,255,.6);
+        //line-height: .5;
+        color: $header-link-color;
         margin-bottom: .75rem;
         margin-top: .75rem;
         position: relative;
