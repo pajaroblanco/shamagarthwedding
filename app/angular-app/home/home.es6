@@ -20,11 +20,12 @@ class HomeController {
 
         this.carousel = {
             images: [
-                '5.jpg',
                 '1.jpg',
+                '5.jpg',
                 '4.jpg',
                 '2.jpg',
-                '3.jpg'
+                '3.jpg',
+                '6.jpg'
             ],
             carouselIndex: 0
         };
