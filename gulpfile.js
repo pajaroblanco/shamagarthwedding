@@ -59,6 +59,7 @@ var externalJsPaths = [
     "app/bower_components/angular-velocity-revival/angular-velocity.js",
     "app/bower_components/angular-touch/angular-touch.js",
     "app/bower_components/angular-carousel/dist/angular-carousel.js"
+    //"app/bower_components/angular-foundation6/angular-foundation.js"
     // "app/bower_components/angular/angular.js"
     // "app/registerComponent.js"
 

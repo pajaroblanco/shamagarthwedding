@@ -54,4 +54,8 @@ h1 {
 
 .button {
   text-transform: capitalize;
+
+  &.expand {
+    width: 100%;
+  }
 }

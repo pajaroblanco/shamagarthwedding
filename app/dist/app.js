@@ -164,26 +164,6 @@ angularApp.config(['$locationProvider', '$routeProvider', function ($locationPro
         controller: 'HomeCtrl',
         controllerAs: 'vm',
         label: 'Home'
-    }).when('/about', {
-        templateUrl: 'angular-app/about-us/about-us.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'vm',
-        label: 'About Us'
-    }).when('/contact', {
-        templateUrl: 'angular-app/contact-us/contact-us.html',
-        controller: 'ContactCtrl',
-        controllerAs: 'vm',
-        label: 'Contact Us'
-    }).when('/portfolio', {
-        templateUrl: 'angular-app/portfolio/portfolio.html',
-        controller: 'PortfolioCtrl',
-        controllerAs: 'vm',
-        label: 'Portfolio'
-    }).when('/pricing', {
-        templateUrl: 'angular-app/pricing/pricing.html',
-        controller: 'PricingCtrl',
-        controllerAs: 'vm',
-        label: 'Pricing'
     }).otherwise({ redirectTo: '/' });
 }]);
 
@@ -197,110 +177,6 @@ angularApp.run([function () {
 angular.module('app.controllers', []);
 angular.module('app.directives', []);
 angular.module('app.services', []);
-'use strict';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-/**
- * Created by Brandon on 6/2/2016.
- */
-
-var AboutUsController = function () {
-    _createClass(AboutUsController, null, [{
-        key: 'getName',
-        value: function getName() {
-            return 'AboutCtrl';
-        }
-    }, {
-        key: 'getDependencies',
-        value: function getDependencies() {
-            return ['$http', '$rootScope', '$timeout', 'ScrollMagic', AboutUsController];
-        }
-    }]);
-
-    function AboutUsController($http, $rootScope, $timeout, ScrollMagic) {
-        _classCallCheck(this, AboutUsController);
-
-        this.$http = $http;
-        this.$rootScope = $rootScope;
-        this.ScrollMagic = ScrollMagic;
-        this.$timeout = $timeout;
-        this.runStartAnimation = false;
-
-        this.contacts = [{
-            photoUrl: 'https://0.s3.envato.com/files/183626516/Image/Image_Profile.jpg', //'dist/images/jeremy.jpg',
-            name: 'Jeremy Ayers',
-            title: 'Pilot (FAA Licensed)',
-            email: 'jeremy@cinescape.us'
-        }, {
-            photoUrl: 'https://0.s3.envato.com/files/183626516/Image/Image_Profile.jpg',
-            name: 'Sam Low',
-            title: 'Cinematographer',
-            email: 'sam@cinescape.us'
-        }, {
-            photoUrl: 'https://0.s3.envato.com/files/183626516/Image/Image_Profile.jpg',
-            name: 'Darren Beasley',
-            title: 'Cinematographer / Photographer',
-            email: 'darren@cinescape.us'
-        }, {
-            photoUrl: 'https://0.s3.envato.com/files/183626516/Image/Image_Profile.jpg',
-            name: 'Brandon Ayers',
-            title: 'Cinematographer / Photographer',
-            email: 'brandon@cinescape.us'
-        }];
-
-        // $timeout(() => {
-        //     this.runStartAnimation = true;
-        // }, 0);
-
-        this.init();
-    }
-
-    _createClass(AboutUsController, [{
-        key: 'init',
-        value: function init() {
-            var _this = this;
-
-            this.$rootScope.appData.smallScreenHeader = 'About Us';
-            this.$rootScope.appData.isLight = true;
-
-            this.$timeout(function () {
-                var getContactCardScene = function getContactCardScene(triggerSelector) {
-                    return new _this.ScrollMagic.Scene({ triggerElement: triggerSelector }).on("enter", function (e) {
-                        $(triggerSelector).velocity("transition.slideLeftIn", { duration: 750, stagger: 150 });
-                    }).on("leave", function (e) {
-                        $(triggerSelector).velocity({ opacity: 0 }, { duration: 300, stagger: 150 });
-                    })
-                    //.addIndicators() //uncomment this to see where the scroll triggers will be
-                    .triggerHook(.75);
-                };
-
-                var getSectionScene = function getSectionScene(triggerSelector) {
-                    return new _this.ScrollMagic.Scene({ triggerElement: triggerSelector }).on("enter", function (e) {
-                        $(triggerSelector).find('h1,h1+p').velocity("transition.slideLeftIn", { duration: 1000, stagger: 200 });
-                    }).on("leave", function (e) {
-                        $(triggerSelector).find('h1,h1+p').velocity({ opacity: 0 }, { duration: 300, stagger: 200 });
-                    })
-                    //.addIndicators() //uncomment this to see where the scroll triggers will be
-                    .triggerHook(.75);
-                };
-
-                var scrollMagicController = new _this.ScrollMagic.Controller();
-                scrollMagicController.addScene(getContactCardScene('.contact-card'));
-                scrollMagicController.addScene(getSectionScene('.about-hero'));
-                scrollMagicController.addScene(getSectionScene('.philosophy'));
-                //scrollMagicController.addScene(getContactCardScene('#bright-bold-container'));
-                //scrollMagicController.addScene(getContactCardScene('#human-centered-container'));
-            }, 0);
-        }
-    }]);
-
-    return AboutUsController;
-}();
-
-registerComponent('app.controllers').controller(AboutUsController.getName(), AboutUsController.getDependencies());
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -418,85 +294,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  * Created by Brandon on 6/2/2016.
  */
 
-var ContactUsController = function () {
-    _createClass(ContactUsController, null, [{
-        key: 'getName',
-        value: function getName() {
-            return 'ContactCtrl';
-        }
-    }, {
-        key: 'getDependencies',
-        value: function getDependencies() {
-            return ['$http', '$rootScope', '$timeout', 'swal', 'velocity', ContactUsController];
-        }
-    }]);
-
-    function ContactUsController($http, $rootScope, $timeout, swal, velocity) {
-        _classCallCheck(this, ContactUsController);
-
-        this.$http = $http;
-        this.$rootScope = $rootScope;
-        this.swal = swal;
-        this.velocity = velocity;
-        this.$timeout = $timeout;
-
-        this.contact = this.getEmptyContact();
-        this.isSubmitting = false;
-
-        this.init();
-    }
-
-    _createClass(ContactUsController, [{
-        key: 'init',
-        value: function init() {
-            var _this = this;
-
-            this.$rootScope.appData.smallScreenHeader = 'Contact Us';
-            this.$rootScope.appData.isLight = false;
-
-            this.$timeout(function () {
-                var items = $('form');
-                _this.velocity(items, 'transition.slideUpIn', { duration: 500, delay: 50 });
-            }, 0);
-        }
-    }, {
-        key: 'getEmptyContact',
-        value: function getEmptyContact() {
-            return {
-                name: '',
-                email: '',
-                phone: '',
-                subject: '',
-                message: ''
-            };
-        }
-    }, {
-        key: 'onSubmit',
-        value: function onSubmit(contactForm) {
-            if (contactForm.$valid) {
-                this.isSubmitting = true;
-                this.swal('Success', 'Thank you for contacting us, someone will respond to you shortly.', 'success');
-                this.contact = this.getEmptyContact();
-                this.contactForm.$setPristine(true);
-                this.isSubmitting = false;
-            }
-        }
-    }]);
-
-    return ContactUsController;
-}();
-
-registerComponent('app.controllers').controller(ContactUsController.getName(), ContactUsController.getDependencies());
-'use strict';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-/**
- * Created by Brandon on 6/2/2016.
- */
-
 var HomeController = function () {
     _createClass(HomeController, null, [{
         key: 'getName',
@@ -506,11 +303,11 @@ var HomeController = function () {
     }, {
         key: 'getDependencies',
         value: function getDependencies() {
-            return ['$http', '$rootScope', '$timeout', 'velocity', '$sce', HomeController];
+            return ['$http', '$rootScope', '$timeout', 'velocity', '$sce', 'swal', HomeController];
         }
     }]);
 
-    function HomeController($http, $rootScope, $timeout, velocity, $sce) {
+    function HomeController($http, $rootScope, $timeout, velocity, $sce, swal) {
         _classCallCheck(this, HomeController);
 
         this.$http = $http;
@@ -518,11 +315,15 @@ var HomeController = function () {
         this.$timeout = $timeout;
         this.velocity = velocity;
         this.$sce = $sce;
+        this.swal = swal;
 
         this.carousel = {
             images: ['1.jpg', '5.jpg', '4.jpg', '2.jpg', '3.jpg', '6.jpg'],
             carouselIndex: 0
         };
+
+        this.submitEmail = 'shamacurrimbhoy@hotmail.com';
+        this.rsvp = this.getEmptyRsvp();
 
         this.init();
     }
@@ -539,135 +340,59 @@ var HomeController = function () {
                 //this.velocity($('.hero-text').find('p,h1,button'), 'transition.slideUpIn', {duration: 1000, stagger: 100, drag: true});
             }, 0);
         }
+    }, {
+        key: 'getEmptyRsvp',
+        value: function getEmptyRsvp() {
+            return {
+                guestName: '',
+                guestNumber: '',
+                allergies: ''
+            };
+        }
+    }, {
+        key: 'openRsvp',
+        value: function openRsvp() {
+            var modal = $('#rsvpModal');
+            modal.foundation('open');
+        }
+    }, {
+        key: 'closeRsvp',
+        value: function closeRsvp() {
+            var modal = $('#rsvpModal');
+            modal.foundation('close');
+        }
+    }, {
+        key: 'onSubmit',
+        value: function onSubmit(rsvpForm) {
+            var _this = this;
+
+            if (rsvpForm.$valid) {
+                this.isSubmitting = true;
+
+                var data = {
+                    'Guest Name': this.rsvp.guestName,
+                    'Number of Guests': this.rsvp.guestNumber,
+                    'Food Allergies': this.rsvp.allergies
+                };
+
+                this.$http.post('https://formspree.io/' + this.submitEmail, data).then(function (response) {
+                    _this.swal('Success', 'Thank you for your RSVP. See you there!', 'success');
+                    _this.rsvp = _this.getEmptyRsvp();
+                    _this.rsvpForm.$setPristine(true);
+                    _this.isSubmitting = false;
+                    _this.closeRsvp();
+                }, function () {
+                    _this.isSubmitting = false;
+                    _this.swal('Error', "Oops, we're so sorry but something went wrong when trying to RSVP. Please try again", 'error');
+                });
+            }
+        }
     }]);
 
     return HomeController;
 }();
 
 registerComponent('app.controllers').controller(HomeController.getName(), HomeController.getDependencies());
-'use strict';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-/**
- * Created by Brandon on 6/2/2016.
- */
-
-var PortfolioController = function () {
-    _createClass(PortfolioController, null, [{
-        key: 'getName',
-        value: function getName() {
-            return 'PortfolioCtrl';
-        }
-    }, {
-        key: 'getDependencies',
-        value: function getDependencies() {
-            return ['$rootScope', PortfolioController];
-        }
-    }]);
-
-    function PortfolioController($rootScope) {
-        _classCallCheck(this, PortfolioController);
-
-        this.$rootScope = $rootScope;
-
-        this.init();
-    }
-
-    _createClass(PortfolioController, [{
-        key: 'init',
-        value: function init() {
-            this.$rootScope.appData.smallScreenHeader = 'Portfolio';
-            this.$rootScope.appData.isLight = false;
-
-            // this.$timeout(() => {
-            //     let items = $('form');
-            //     this.velocity(items, 'transition.slideUpIn', {duration: 500, delay: 50});
-            // }, 0);
-        }
-    }]);
-
-    return PortfolioController;
-}();
-
-registerComponent('app.controllers').controller(PortfolioController.getName(), PortfolioController.getDependencies());
-'use strict';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-/**
- * Created by Brandon on 6/2/2016.
- */
-
-var PricingController = function () {
-    _createClass(PricingController, null, [{
-        key: 'getName',
-        value: function getName() {
-            return 'PricingCtrl';
-        }
-    }, {
-        key: 'getDependencies',
-        value: function getDependencies() {
-            return ['$rootScope', 'velocity', '$timeout', PricingController];
-        }
-    }]);
-
-    function PricingController($rootScope, velocity, $timeout) {
-        _classCallCheck(this, PricingController);
-
-        this.$rootScope = $rootScope;
-        this.velocity = velocity;
-        this.$timeout = $timeout;
-
-        this.pricingInfo = [{
-            title: 'Standard Property',
-            price: '$1499*',
-            description: '* This is just an estimate. Pricing is subject to change based on each individual property.',
-            houseSize: '< 2000 sqft house',
-            lotSize: '< 8000 sqft lot',
-            included: 'Professionally edited 4k footage'
-        }, {
-            title: 'Large Property',
-            price: '$2499*',
-            description: '* This is just an estimate. Pricing is subject to change based on each individual property.',
-            houseSize: '2001 - 3500 sqft house',
-            lotSize: '8001 - 16000 sqft lot',
-            included: 'Professionally edited 4k footage'
-        }, {
-            title: 'Luxury Property',
-            price: '$4999*',
-            description: '* This is just an estimate. Pricing is subject to change based on each individual property.',
-            houseSize: '> 3500 sqft house',
-            lotSize: '> 16000 sqft lot',
-            included: 'Professionally edited 4k footage'
-        }];
-
-        this.init();
-    }
-
-    _createClass(PricingController, [{
-        key: 'init',
-        value: function init() {
-            var _this = this;
-
-            this.$rootScope.appData.smallScreenHeader = 'Pricing';
-            this.$rootScope.appData.isLight = false;
-
-            this.$timeout(function () {
-                var items = $('.pricing-wrapper');
-                _this.velocity(items, 'transition.slideLeftIn', { duration: 750, stagger: 75 });
-            }, 0);
-        }
-    }]);
-
-    return PricingController;
-}();
-
-registerComponent('app.controllers').controller(PricingController.getName(), PricingController.getDependencies());
 'use strict';
 
 /**

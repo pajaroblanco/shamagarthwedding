@@ -21,30 +21,6 @@ angularApp.config(['$locationProvider', '$routeProvider', function ($locationPro
             controllerAs: 'vm',
             label: 'Home'
         }).
-        when('/about', {
-            templateUrl: 'angular-app/about-us/about-us.html',
-            controller: 'AboutCtrl',
-            controllerAs: 'vm',
-            label: 'About Us'
-        }).
-        when('/contact', {
-            templateUrl: 'angular-app/contact-us/contact-us.html',
-            controller: 'ContactCtrl',
-            controllerAs: 'vm',
-            label: 'Contact Us'
-        }).
-        when('/portfolio', {
-            templateUrl: 'angular-app/portfolio/portfolio.html',
-            controller: 'PortfolioCtrl',
-            controllerAs: 'vm',
-            label: 'Portfolio'
-        }).
-        when('/pricing', {
-            templateUrl: 'angular-app/pricing/pricing.html',
-            controller: 'PricingCtrl',
-            controllerAs: 'vm',
-            label: 'Pricing'
-        }).
         otherwise({redirectTo: '/'});
 }]);
 

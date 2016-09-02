@@ -64,11 +64,64 @@
     </div>
 </div>
 
+<div class="reveal" id="rsvpModal" data-reveal data-animation-in="fade-in">
+    <h1>RSVP</h1>
+    <button class="close-button" data-close aria-label="Close modal" type="button">
+        <span aria-hidden="true">&times;</span>
+    </button>
+
+    <!--Name, # in Party (including self), Food allergies/restrictions-->
+    
+    <form novalidate app-form name="vm.rsvpForm" ng-submit="vm.onSubmit(vm.rsvpForm)">
+        <div class="row">
+            <div class="small-12 medium-6 columns">
+                <label>
+                    Name <small>Required</small>
+                    <input type="text" required ng-model="vm.rsvp.guestName"/>
+                    <span class="form-error">Name is required</span>
+                </label>
+            </div>
+            <div class="small-12 medium-6 columns">
+                <label>
+                    Number of Guests (including self) <small>Required</small>
+                    <input type="text" required ng-pattern="/^\d+$/" ng-model="vm.rsvp.guestNumber"/>
+                    <span class="form-error">Please enter a whole number</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="small-12 medium-12 columns">
+                <label>
+                    Food Allergies / Restrictions
+                    <textarea ng-model="vm.rsvp.allergies"></textarea>
+                </label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="small-12 columns text-right">
+                <button type="submit" class="button large alert radius" ng-disabled="vm.isSubmitting">Submit<span ng-show="vm.isSubmitting">ing...</span></button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="row full-width intro align-center">
+    <div class="column">
+        <div class="row standard-width align-center" style="padding-top:5rem;">
+            <div class="medium-4 small-12 columns text-center">
+                <button class="large button expand" ng-click="vm.openRsvp()">RSVP</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="home-content">
 
     <div class="row full-width intro align-center">
         <div class="column">
-            <div class="row standard-width">
+            <div class="row standard-width" style="padding-top:5rem">
                 <div class="column text-center">
                     <hr style="width:70%;margin-bottom:50px;">
                     <p>
