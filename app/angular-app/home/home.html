@@ -11,6 +11,10 @@
                     <!--<a ng-click="base.scrollToSection(navLink.section)" ng-bind="navLink.label"></a>-->
                 <!--</li>-->
                 <li>
+                    <a ng-click="base.scrollToSection('rsvp')">RSVP/Registry</a>
+                </li>
+
+                <li>
                     <a ng-click="base.scrollToSection('destination')">Destination</a>
                 </li>
                 <!--<li>-->
@@ -107,11 +111,31 @@
     </form>
 </div>
 
-<div class="row full-width intro align-center">
+<div class="row full-width rsvp align-center">
     <div class="column">
         <div class="row standard-width align-center" style="padding-top:5rem;">
             <div class="medium-4 small-12 columns text-center">
                 <button class="large button expand" ng-click="vm.openRsvp()">RSVP</button>
+            </div>
+        </div>
+
+        <div class="row standard-width align-center registry" style="padding-top:5rem;">
+            <div class="small-12 columns text-center">
+
+                <h3>Shama and Garth are registered at</h3>
+
+                <div class="row small-up-1 medium-up-2 align-middle">
+                    <div class="column">
+                        <a href="https://www.bedbathandbeyond.com/store/giftregistry/view_registry_guest.jsp?pwsToken=&eventType=Wedding&registryId=543751451&pwsurl=" target="_blank">
+                            <img src="https://www.bedbathandbeyond.com/_assets/global/images/logo/logo_br.png" alt="Bed Bath & Beyond"/>
+                        </a>
+                    </div>
+                    <div class="column">
+                        <a href="http://www.crateandbarrel.com/gift-registry/shama-currimbhoy-and-garth-watkins/r5583539" target="_blank">
+                            <img src="http://images.crateandbarrel.com/is/image/Crate/WebsiteHeaderLogo?wid=295" alt="Crate and Barrel"/>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

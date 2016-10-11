@@ -186,7 +186,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 /**
  * This is the base controller attached to the <body> tag
  */
-
 var BaseController = function () {
     _createClass(BaseController, null, [{
         key: 'getName',
@@ -213,7 +212,7 @@ var BaseController = function () {
             activeNavigationLink: 'home'
         };
 
-        this.navLinks = [{ label: 'Destination', smallLabel: $sce.trustAsHtml('<span>Destination</span>'), section: 'destination', isActive: false }, { label: 'mehndi', smallLabel: $sce.trustAsHtml('<span>Mehndi/Sangeet</span>'), section: 'mehndi', isActive: false }, { label: 'ceremonies', smallLabel: $sce.trustAsHtml('<span>The Ceremonies</span>'), section: 'ceremony', isActive: false }, { label: 'reception', smallLabel: $sce.trustAsHtml('<span>Reception</span>'), section: 'reception', isActive: false }, { label: 'gracias', smallLabel: $sce.trustAsHtml('<span>Gracias & Adios Brunch</span>'), section: 'adios', isActive: false }, { label: 'travel', smallLabel: $sce.trustAsHtml('<span>Travel Info</span>'), section: 'travel', isActive: false }
+        this.navLinks = [{ label: 'RSVP/Registry', smallLabel: $sce.trustAsHtml('<span>RSVP/Registry</span>'), section: 'rsvp', isActive: false }, { label: 'Destination', smallLabel: $sce.trustAsHtml('<span>Destination</span>'), section: 'destination', isActive: false }, { label: 'mehndi', smallLabel: $sce.trustAsHtml('<span>Mehndi/Sangeet</span>'), section: 'mehndi', isActive: false }, { label: 'ceremonies', smallLabel: $sce.trustAsHtml('<span>The Ceremonies</span>'), section: 'ceremony', isActive: false }, { label: 'reception', smallLabel: $sce.trustAsHtml('<span>Reception</span>'), section: 'reception', isActive: false }, { label: 'gracias', smallLabel: $sce.trustAsHtml('<span>Gracias & Adios Brunch</span>'), section: 'adios', isActive: false }, { label: 'travel', smallLabel: $sce.trustAsHtml('<span>Travel Info</span>'), section: 'travel', isActive: false }
         // {label: 'Ceremony', smallLabel: $sce.trustAsHtml('<span>Ceremony</span>'), section: 'ceremony', isActive: false},
         // {label: 'Reception', smallLabel: $sce.trustAsHtml('<span>Reception</span>'), section: 'reception', isActive: false},
         // {label: 'Afterparty', smallLabel: $sce.trustAsHtml('<span>Afterparty</span>'), section: 'afterparty', isActive: false}

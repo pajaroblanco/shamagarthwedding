@@ -22,6 +22,7 @@ class BaseController {
         };
 
         this.navLinks = [
+            {label: 'RSVP/Registry', smallLabel: $sce.trustAsHtml('<span>RSVP/Registry</span>'), section: 'rsvp', isActive: false},
             {label: 'Destination', smallLabel: $sce.trustAsHtml('<span>Destination</span>'), section: 'destination', isActive: false},
             {label: 'mehndi', smallLabel: $sce.trustAsHtml('<span>Mehndi/Sangeet</span>'), section: 'mehndi', isActive: false},
             {label: 'ceremonies', smallLabel: $sce.trustAsHtml('<span>The Ceremonies</span>'), section: 'ceremony', isActive: false},
